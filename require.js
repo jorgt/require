@@ -6,7 +6,7 @@
 	var _options = {
 		path: '',        //the default path for JS files
 		extension: 'js'  //sets the extension of JS files
-	}
+	};
 
 	obj.define = define;
 
@@ -26,7 +26,7 @@
 		for (var d in args.deps) {
 			_load(args.name, args.deps[d]);
 		}
-		_execute()
+		_execute();
 	}
 
 	/** 
@@ -39,7 +39,7 @@
 		}
 
 		options['path'] = options['path'].replace(/^\//, '');
-	}
+	};
 
 	function _verify(args) {
 		args = Array.prototype.slice.call(args);
@@ -57,11 +57,11 @@
 			name: args[0].replace(/^\//, ''),
 			deps: (args[2]) ? args[1] : [],
 			callback: args[2] || args[1]
-		}
+		};
 
 		for(var d in ret.deps) {
 			ret.deps[d] = ret.deps[d].replace(/^\//, '');
-		};
+		}
 
 		return ret;
 	}
@@ -90,7 +90,7 @@
 
 	function _load(name, file) {
 		if (_loaded[name]) {
-			return _loaded[name]
+			return _loaded[name];
 		} else {
 			var head = document.getElementsByTagName('head')[0];
 			var script = document.createElement('script');
@@ -98,12 +98,12 @@
 			script.async = true;
 
 			script.onload = function() {
-				_execute()
+				_execute();
 			};
 
 			script.onerror = function() {
-				console.error('File', file, 'in module', name, 'could not be loaded.')
-			}
+				console.error('File', file, 'in module', name, 'could not be loaded.');
+			};
 
 			var path = (_options.path !== '')?'/' + _options.path:'';
 
