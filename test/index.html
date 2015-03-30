@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Engine</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+
+        <script src="../require.js"></script>
+        <script>
+            define.options({
+                path: 'test'
+            });
+
+        	define('main', ['bla', 'test'], function(bla, test) {
+                console.log('bla:', bla);
+        		console.log('stuff:', test);
+        	})
+        </script>
+    </body>
+</html>
